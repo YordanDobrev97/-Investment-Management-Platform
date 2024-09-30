@@ -1,0 +1,40 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 10px;
+    background-color: black;
+
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            text-decoration: none;
+            font-size: 28px;
+            padding: 0 10px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .active {
+            color: #876AAF;
+        }
+    }
+
+    button {
+        width: 200px;
+        padding: 10px;
+        border: none;
+        border-radius: 50px;
+        font-size: 28px;
+        background: #876AAF;
+        color: white;
+    }
+}

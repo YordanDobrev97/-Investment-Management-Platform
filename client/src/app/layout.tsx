@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import './globals.scss';
 
-const inter = Inter({ subsets: ["latin"] });
+import Navbar from 'imp/components/Navbar';
+import Header from 'imp/components/Header';
 
 export const metadata: Metadata = {
-  title: "Investment Managment Platform",
-  description: "Investment Managment Platform",
+  title: 'Investment Managment Platform',
+  description: 'Investment Managment Platform',
 };
 
 export default function RootLayout({
@@ -15,8 +15,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang='en'>
+      <body suppressHydrationWarning={true}>
+        <Navbar />
+        <Header />
+        
+        {children}
+      </body>
     </html>
   );
 }

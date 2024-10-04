@@ -1,0 +1,81 @@
+$pink-color: #876AAF;
+$transition-time: 0.5s;
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: black;
+
+    .btn-burger {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: flex-start;
+        list-style-type: none;
+        padding: 0;
+        transition: max-height $transition-time ease, opacity $transition-time ease;
+
+        li {
+            font-size: 28px;
+            padding: 0 10px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: $pink-color;
+        }
+
+        .active {
+            color: $pink-color;
+        }
+    }
+
+    .btn-login {
+        margin-left: auto;
+        padding: 10px;
+        border: none;
+        border-radius: 50px;
+        font-size: 28px;
+        background: $pink-color;
+        color: white;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    @media screen and (max-width: 590px) {
+        flex-direction: column-reverse;
+
+        .menu {
+            flex-direction: column;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height $transition-time ease, opacity $transition-time ease;
+        }
+
+        .btn-login {
+            display: none;
+        }
+
+        .btn-burger {
+            display: block;
+            margin-left: auto;
+            font-size: 28px;
+            background: none;
+            border: none;
+            color: white;
+        }
+
+        .menu.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+    }
+}

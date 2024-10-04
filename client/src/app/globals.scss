@@ -1,8 +1,9 @@
 @import '../styles/navbar/navbar.scss';
+@import '../styles/header//header.scss';
 
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #484551;
+    background: linear-gradient(90deg, rgba(1,1,1,1) 0%, rgba(27,27,112,0.8799894957983193) 35%, rgba(20,50,56,1) 100%);
 }

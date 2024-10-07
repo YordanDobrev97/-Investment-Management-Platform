@@ -3,41 +3,32 @@ $transition-time: 0.5s;
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 10px;
     background-color: black;
 
-    .btn-burger {
-        display: none;
-    }
-
     .menu {
         display: flex;
-        justify-content: flex-start;
-        list-style-type: none;
-        padding: 0;
-        transition: max-height $transition-time ease, opacity $transition-time ease;
-
-        li {
-            font-size: 28px;
-            padding: 0 10px;
-        }
+        justify-content: space-around;
+        width: 30%;
+    }
+    .item {
+        font-size: 30px;
 
         a {
             color: white;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: $pink-color;
-        }
-
-        .active {
-            color: $pink-color;
         }
     }
-
+    .btn-burger {
+        display: none;
+        position: absolute;
+        right: 9px;
+        top: 35px;
+    }
+    a {
+        text-decoration: none;
+    }
     .btn-login {
         margin-left: auto;
         padding: 10px;
@@ -46,24 +37,22 @@ $transition-time: 0.5s;
         font-size: 28px;
         background: $pink-color;
         color: white;
+        width: 100px;
+        text-align: center;
         transition: transform 0.3s ease-in-out;
     }
-
-    @media screen and (max-width: 590px) {
-        flex-direction: column-reverse;
-
+    @media screen and (max-width: 980px){
         .menu {
-            flex-direction: column;
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            transition: max-height $transition-time ease, opacity $transition-time ease;
+            width: 80%;
         }
-
-        .btn-login {
+    }
+    @media screen and (max-width: 590px) {
+        flex-direction: column;
+        padding: 45px;
+        
+        .menu, .btn-login {
             display: none;
         }
-
         .btn-burger {
             display: block;
             margin-left: auto;
@@ -72,10 +61,13 @@ $transition-time: 0.5s;
             border: none;
             color: white;
         }
-
-        .menu.open {
+        .menu.open, .btn-login.open {
+            display: block;
             max-height: 500px;
             opacity: 1;
+        }
+        .btn-login {
+            margin: auto;
         }
     }
 }

@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { useState } from 'react'
+
 import '../styles/navbar/navbar.scss'
 
 const Navbar = () => {
@@ -13,21 +14,21 @@ const Navbar = () => {
     }
 
     return (
-        <nav className='navbar'>
-            <ul className={`menu ${isOpenMenu ? 'open' : ''}`}>
-                <li>
-                    <Link className='active' href='home'>Home</Link>
+        <nav className={`navbar`}>
+            <ul className={`menu ${isOpenMenu ? 'open': ''}`}>
+                <li className='item'>
+                    <Link href='/'>Home</Link>
                 </li>
 
-                <li>
-                    <Link href='aboutUs'>AboutUs</Link>
+                <li className='item'>
+                    <Link href='aboutUs'>About</Link>
                 </li>
 
-                <li>
+                <li className='item'>
                     <Link href='services'>Services</Link>
                 </li>
 
-                <li>
+                <li className='item'>
                     <Link href='services'>Contact</Link>
                 </li>
             </ul>
@@ -36,7 +37,7 @@ const Navbar = () => {
                 <GiHamburgerMenu />
             </button>
 
-            <button className='btn-login'>Login</button>
+            <Link href='/login' className={`btn-login ${isOpenMenu ? 'open': ''}`}>Login</Link>
         </nav>
     )
 }

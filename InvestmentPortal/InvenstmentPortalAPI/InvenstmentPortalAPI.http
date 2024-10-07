@@ -1,0 +1,6 @@
+@InvenstmentPortalAPI_HostAddress = http://localhost:5111
+
+GET {{InvenstmentPortalAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

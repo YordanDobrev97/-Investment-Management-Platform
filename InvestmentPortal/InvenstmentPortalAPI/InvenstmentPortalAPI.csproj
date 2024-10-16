@@ -26,7 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\InvestmentPortal.Common\InvestmentPortal.Common.csproj" />
     <ProjectReference Include="..\InvestmentPortal.Data\InvestmentPortal.Data.csproj" />
+    <ProjectReference Include="..\InvestmentPortal.Services\InvestmentPortal.Services.csproj" />
   </ItemGroup>
 
 </Project>

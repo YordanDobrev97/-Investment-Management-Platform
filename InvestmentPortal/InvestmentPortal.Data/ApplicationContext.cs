@@ -9,9 +9,5 @@ namespace InvestmentPortal.Data
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
         }
-
-        public DbSet<ApplicationUser> Users { get; set; }
-
-        public DbSet<ApplicationRole> Roles { get; set; }
     }
 }

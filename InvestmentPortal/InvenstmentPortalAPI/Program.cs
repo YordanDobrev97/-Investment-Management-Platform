@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Identity.Web;
 using InvestmentPortal.Data;
 using Microsoft.EntityFrameworkCore;
-using InvestmentPortal.Services.Users;
 using InvestmentPortal.Data.Models;
 using Microsoft.AspNetCore.Identity;
 
@@ -15,16 +14,15 @@ builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServe
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
 
-builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
+builder.Services.AddIdentityCore<ApplicationUser>()
     .AddEntityFrameworkStores<ApplicationContext>()
+    .AddApiEndpoints()
     .AddDefaultTokenProviders();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-builder.Services.AddTransient<IUserService, UserService>();
 
 var app = builder.Build();
 
@@ -37,8 +35,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapIdentityApi<ApplicationUser>();
 
 app.Run();

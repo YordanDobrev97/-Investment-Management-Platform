@@ -1,6 +1,7 @@
 'use client'
 
 import Link from "next/link"
+import Image from 'next/image'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { useState } from 'react'
 
@@ -15,7 +16,29 @@ const Navbar = () => {
 
     return (
         <nav className={`navbar`}>
-            <ul className={`menu ${isOpenMenu ? 'open': ''}`}>
+            <Link className={`logo`} href={`/`}>
+                Finix
+            </Link>
+
+            <ul className={`menu-items`}>
+                <li className={`menu-item`}>
+                    <Link href='/'>Home</Link>
+                </li>
+                <li className={`menu-item`}>
+                    <Link href='/about'>About</Link>
+                </li>
+                <li className={`menu-item`}>
+                    <Link href='/portfolio'>Markets</Link>
+                </li>
+                <li className={`menu-item`}>
+                    <Link href='/'>Trends</Link>
+                </li>
+            </ul>
+
+            <button className={`login-btn`}>
+                <Link href='/login'>Login</Link>
+            </button>
+            {/* <ul className={`menu ${isOpenMenu ? 'open': ''}`}>
                 <li className='item'>
                     <Link href='/'>Home</Link>
                 </li>
@@ -37,7 +60,7 @@ const Navbar = () => {
                 <GiHamburgerMenu />
             </button>
 
-            <Link href='/login' className={`btn-login ${isOpenMenu ? 'open': ''}`}>Login</Link>
+            <Link href='/login' className={`btn-login ${isOpenMenu ? 'open': ''}`}>Login</Link> */}
         </nav>
     )
 }

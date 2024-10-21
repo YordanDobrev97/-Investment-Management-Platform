@@ -1,5 +1,5 @@
 .top-section {
-    padding: 40px;
+    padding: 20px;
 
     .article-container {
         display: flex;
@@ -11,13 +11,15 @@
     }
 
     h1 {
-        max-width: 8em;
+        max-width: 15em;
         font-size: 58px;
+        margin: 0;
+        text-align: center;
     }
     
     article {
         color: white;
-        font-size: 28px;
+        font-size: 24px;
     
         img {
             width: 100%;
@@ -25,24 +27,21 @@
         }
     
         p {
-            max-width: 34em;
+            max-width: 15em;
+            min-width: 100%;
+            text-align: center;
         }
     }
     
-    article.right-image {
-        width: 20%;
-        height: 20%;
-    }
-
     .btn-more {
         width: 20%;
-        margin: 0 100px;
-        background: #876AAF;
+        margin: auto;
+        background: #27c327;
         color: white;
         padding: 10px;
         border: none;
         border-radius: 100px;
-        font-size: 25px;
+        font-size: 30px;
         display: block;
         flex-shrink: 0;
     }

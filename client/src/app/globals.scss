@@ -1,9 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 @import '../styles/navbar/navbar.scss';
-@import '../styles/header//header.scss';
+@import '../styles/header/header.scss';
+
+$font-size-base: 28px;
 
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: linear-gradient(90deg, rgba(1,1,1,1) 0%, rgba(27,27,112,0.8799894957983193) 35%, rgba(20,50,56,1) 100%);
+    font-size: $font-size-base;
+    background: rgb(42, 42, 42);
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    background-color: none;
+    border: none;
 }
